@@ -160,7 +160,7 @@ function App() {
         </div>
       </header>
       <footer className="App-footer">
-        <div className="attribution" title="Copyright &copy 2021 Joh Yoshida">
+        <div className="attribution" title="Copyright 2021 Joh Yoshida">
           {FooterCanvases}
         </div>
       </footer>
