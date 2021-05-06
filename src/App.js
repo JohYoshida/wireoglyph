@@ -9,7 +9,7 @@ function App() {
   let longWords = "phenomenon deleuze communication cybernetic communism information lexicon phlebotomist technicality chromatic bellicose consideration languages bloviate legible extensible honorific charismatic diabolical prehensile"
   // State hooks
   const [string, setString] = React.useState(mobyDick);
-  const [c, setC] = React.useState(3); // size multiplication factor for canvas
+  const [canvasSize, setC] = React.useState(3); // size multiplication factor for canvas
   // char positions on 100x50 canvas
   const chars = {
     1: [5, 5],
@@ -59,7 +59,7 @@ function App() {
     "#8BC34A", "#FFEB3B", "#FFC107", "#FF9800", "#FF5722"
   ];
 
-  const draw = (ctx, string, c) => {
+  const draw = (ctx, string, canvasSize) => {
     let charArray = string.split("");
     let colorIndex = 1;
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
@@ -72,7 +72,7 @@ function App() {
       if (coord) { // handle valid characters
         if (i <= 0) { // draw start circle
           ctx.beginPath();
-          ctx.arc(coord[0] * c, coord[1] * c, 2, 0, 365)
+          ctx.arc(coord[0] * canvasSize, coord[1] * canvasSize, 2, 0, 365)
           ctx.fill();
           lastCoord = coord; // Set current coord to lastCoord for next iteration
         } else { // handle letters
@@ -83,8 +83,8 @@ function App() {
           ctx.strokeStyle = gradient;
           // Make line from lastCoord to coord
           ctx.beginPath();
-          ctx.moveTo(lastCoord[0] * c, lastCoord[1] * c);
-          ctx.lineTo(coord[0] * c, coord[1] * c);
+          ctx.moveTo(lastCoord[0] * canvasSize, lastCoord[1] * canvasSize);
+          ctx.lineTo(coord[0] * canvasSize, coord[1] * canvasSize);
           ctx.stroke();
           lastCoord = coord;
           // Increment colorIndex and loop if at end
@@ -102,13 +102,13 @@ function App() {
     Canvases.push(
       <Canvas
         className="canvas"
-        width={100 * c}
-        height={50 * c}
+        width={100 * canvasSize}
+        height={50 * canvasSize}
         draw={draw}
         string={item}
         title={item}
         key={i}
-        size={c}
+        size={canvasSize}
       >
         {item}
       </Canvas>
@@ -139,6 +139,11 @@ function App() {
   const changeTextString = event => {
     setString(event.target.value);
   }
+
+  const changeCanvasSize = event => {
+    setC(event.target.value);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -147,10 +152,23 @@ function App() {
           onChange={changeTextString}
           value={string}
         />
-      <div className="Buttons">
+        <div className="Buttons">
           <button name="Moby Dick" onClick={() => setString(mobyDick)}>Moby Dick</button>
           <button name="Geometry" onClick={() => setString(shapes)}>Geometry</button>
           <button name="Long words" onClick={() => setString(longWords)}>Long words</button>
+        </div>
+        <div>
+          <input
+            type="range"
+            min="0.1"
+            max="5"
+            value={canvasSize}
+            step="0.1"
+            class="slider"
+            id="sizeRange"
+            onChange={changeCanvasSize}
+          />
+        <text>{canvasSize}</text>
         </div>
         <div className="Canvases">
           {Canvases}
