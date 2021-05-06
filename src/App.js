@@ -160,7 +160,7 @@ function App() {
         <div>
           <input
             type="range"
-            min="0.1"
+            min="0.5"
             max="5"
             value={canvasSize}
             step="0.1"
