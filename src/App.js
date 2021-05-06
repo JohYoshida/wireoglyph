@@ -74,14 +74,14 @@ function App() {
           ctx.beginPath();
           ctx.arc(coord[0] * c, coord[1] * c, 2, 0, 365)
           ctx.fill();
-          lastCoord = coord;
+          lastCoord = coord; // Set current coord to lastCoord for next iteration
         } else { // handle letters
           // Make gradient
           let gradient = ctx.createLinearGradient(lastCoord[0], lastCoord[1], coord[0], coord[1]);
           gradient.addColorStop(0, colors[colorIndex - 1]);
           gradient.addColorStop(1, colors[colorIndex]);
-          // Make line from lastCoord to coord
           ctx.strokeStyle = gradient;
+          // Make line from lastCoord to coord
           ctx.beginPath();
           ctx.moveTo(lastCoord[0] * c, lastCoord[1] * c);
           ctx.lineTo(coord[0] * c, coord[1] * c);
@@ -116,8 +116,7 @@ function App() {
   });
 
   // Make array of canvases for footer
-  let footer = "Copyright 2021 Joh Yoshida"
-  let footerArray = footer.split(" ");
+  let footerArray = "Copyright 2021 Joh Yoshida".split(" ");
   let footerSize = 0.7;
   const FooterCanvases = [];
   footerArray.forEach((item, i) => {
@@ -147,8 +146,6 @@ function App() {
           name="textValue"
           onChange={changeTextString}
           value={string}
-          rows={5}
-          cols={50}
         />
       <div className="Buttons">
           <button name="Moby Dick" onClick={() => setString(mobyDick)}>Moby Dick</button>
