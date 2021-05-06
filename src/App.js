@@ -5,7 +5,7 @@ let mobyDick = "Call me Ishmael. Some years ago - never mind how long precisely 
 
 let shapes = "test roar rear treat fluff bulb bomb blob neon aria nonagon terrible exposee"
 
-let funWords = "phenomenal lexicon scintillating communication bloviate excessively languages consideration cybernetic communism information steersmanship portobello deleuze phlebotomist technicality chromatic bellicose legible extensible honorific charismatic diabolical prehensile ascetic network flagellum gargantuan invalidation charismatic megafauna"
+let funWords = "phenomenal lexicon scintillating communication bloviate excessively languages consideration cybernetic communism information steersmanship portobello deleuze phlebotomist technicality chromatic bellicose legible extensible honorific charismatic diabolical prehensile ascetic network flagellum gargantuan invalidation charismatic megafauna uncomfortable metaphysical shoulderblade"
 
 function App() {
   // State hooks
