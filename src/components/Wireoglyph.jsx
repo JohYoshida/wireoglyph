@@ -130,7 +130,7 @@ export default function Wireoglyph(props) {
     );
   });
 
-  return <div className="Canvases">{Canvases}</div>;
+  return <div className="Wireoglyph">{Canvases}</div>;
 }
 
 const Canvas = props => {

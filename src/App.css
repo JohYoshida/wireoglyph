@@ -22,10 +22,10 @@ html {
   overflow: hidden;
 }
 
-.Canvases {
+.Wireoglyph {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 
 .canvas {
