@@ -33,8 +33,12 @@ html {
   margin: 5px; */
 }
 
+img {
+  margin: 5%;
+}
+
 textarea {
-  margin-top: 50px;
+  margin: 10px;
   font-family: sans-serif;
   font-size: 15px;
   width: 80%;

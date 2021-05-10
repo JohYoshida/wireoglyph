@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} alt="WIREOGLYPH" />
+        <img src={logo} alt="WIREOGLYPH" height="auto" width="90%" />
         <textarea type="textarea"
           name="textValue"
           onChange={changeTextString}
