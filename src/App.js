@@ -1,5 +1,6 @@
 import React from 'react'
 import Wireoglyph from "./components/Wireoglyph"
+import logo from "./logo.png"
 import './App.css';
 
 let mobyDick = "Call me Ishmael. Some years ago - never mind how long precisely - having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen, and regulating circulation. Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodologically knocking people's hats off - then, I account it high time to get to sea as soon as I can. This is my substitute for pistol and ball... I quietly take to the ship. There is nothing surprising in this. If they but knew it, almost all men in their degree, some time or other, cherish very nearly the same feelings towards the ocean with me."
@@ -8,7 +9,7 @@ let shapes = "test roar rear treat fluff bulb bomb blob neon aria nonagon terrib
 
 let funWords = "phenomenal lexicon scintillating communication bloviate excessively languages consideration cybernetic communism information steersmanship portobello deleuze phlebotomist technicality chromatic bellicose legible extensible honorific charismatic diabolical prehensile ascetic network flagellum gargantuan invalidation charismatic megafauna uncomfortable metaphysical shoulderblade"
 
-let wireoglyph = "tvybu ytuybvn ybyujhn yuyhjhbn tunvt utvnjh ybm hthihb yikhyhb tgvgjujn"
+// let wireoglyph = "tvybu ytuybvn ybyujhn yuyhjhbn tunvt utvnjh ybm hthihb yikhyhb tgvgjujn"
 
 function App() {
   // State hooks
@@ -26,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Wireoglyph string={wireoglyph} size={1.5} />
+        <img src={logo} alt="WIREOGLYPH" />
         <textarea type="textarea"
           name="textValue"
           onChange={changeTextString}
