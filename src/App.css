@@ -34,7 +34,10 @@ html {
 }
 
 img {
-  margin: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 textarea {
